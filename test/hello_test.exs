@@ -1,6 +1,6 @@
 defmodule OlaMundoPm.HelloTest do
   use ExUnit.Case, async: true
-  import Plug.Test 
+  import Plug.Test
 
   @opts OlaMundoPm.Router.init([])
 

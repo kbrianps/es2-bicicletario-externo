@@ -14,6 +14,7 @@ defmodule OlaMundoPm.Router do
 
   get "/api/v1/hello" do
     resp = OlaMundoPm.Controllers.HelloController.index()
+
     conn
     |> Plug.Conn.put_resp_content_type("application/json")
     |> send_resp(200, Jason.encode!(resp))
