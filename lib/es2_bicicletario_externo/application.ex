@@ -1,13 +1,13 @@
-defmodule OlaMundoPm.Application do
+defmodule Es2BicicletarioExterno.Application do
   @moduledoc false
   use Application
 
   def start(_type, _args) do
     children = [
-      {Plug.Cowboy, scheme: :http, plug: OlaMundoPm.Router, options: [port: port()]}
+      {Plug.Cowboy, scheme: :http, plug: Es2BicicletarioExterno.Router, options: [port: port()]}
     ]
 
-    opts = [strategy: :one_for_one, name: OlaMundoPm.Supervisor]
+    opts = [strategy: :one_for_one, name: Es2BicicletarioExterno.Supervisor]
     Supervisor.start_link(children, opts)
   end
 

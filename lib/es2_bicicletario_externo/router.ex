@@ -1,9 +1,9 @@
-defmodule OlaMundoPm.Router do
+defmodule Es2BicicletarioExterno.Router do
   @moduledoc false
   use Plug.Router
   use Plug.ErrorHandler
 
-  alias OlaMundoPm.Controllers.HelloController
+  alias Es2BicicletarioExterno.Controllers.HelloController
   alias Plug.Conn, as: Conn
 
   plug Plug.Logger

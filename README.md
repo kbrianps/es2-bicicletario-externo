@@ -1,4 +1,4 @@
-# Ola Mundo PM (Elixir)
+# ES2 Bicicletario Externo (Elixir)
 
 Pequeno microserviço em Elixir (Plug + Cowboy) com:
 - Endpoint GET /api/v1/hello -> {"message":"Olá, mundo!"}
@@ -24,12 +24,12 @@ CI/Sonar
 - Edite sonar-project.properties com projectKey/organization
 
 Deploy com Docker
-- docker build -t ola-mundo-pm .
-- docker run -p 4000:4000 -e PORT=4000 ola-mundo-pm
+- docker build -t es2-bicicletario-externo .
+- docker run -p 4000:4000 -e PORT=4000 es2-bicicletario-externo
 
 Estrutura
-- lib/ola_mundo_pm/router.ex
-- lib/ola_mundo_pm/controllers/hello_controller.ex
+- lib/es2_bicicletario_externo/router.ex
+- lib/es2_bicicletario_externo/controllers/hello_controller.ex
 - test/hello_test.exs
 
 Licença

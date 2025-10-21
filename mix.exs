@@ -1,9 +1,9 @@
-defmodule OlaMundoPm.MixProject do
+defmodule Es2BicicletarioExterno.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :ola_mundo_pm,
+  app: :es2_bicicletario_externo,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
@@ -21,7 +21,7 @@ defmodule OlaMundoPm.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {OlaMundoPm.Application, []}
+  mod: {Es2BicicletarioExterno.Application, []}
     ]
   end
 
