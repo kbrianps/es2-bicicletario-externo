@@ -11,6 +11,12 @@ defmodule OlaMundoPm.Router do
   plug Plug.Parsers, parsers: [:json], json_decoder: Jason
   plug :dispatch
 
+  get "/" do
+    conn
+    |> Conn.put_resp_header("location", "/api/v1/hello")
+    |> send_resp(302, "")
+  end
+
   get "/health" do
     send_resp(conn, 200, "ok")
   end
