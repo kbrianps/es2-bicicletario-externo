@@ -3,6 +3,9 @@ defmodule OlaMundoPm.Router do
   use Plug.Router
   use Plug.ErrorHandler
 
+  alias OlaMundoPm.Controllers.HelloController
+  alias Plug.Conn, as: Conn
+
   plug Plug.Logger
   plug :match
   plug Plug.Parsers, parsers: [:json], json_decoder: Jason
@@ -13,10 +16,10 @@ defmodule OlaMundoPm.Router do
   end
 
   get "/api/v1/hello" do
-    resp = OlaMundoPm.Controllers.HelloController.index()
+    resp = HelloController.index()
 
     conn
-    |> Plug.Conn.put_resp_content_type("application/json")
+    |> Conn.put_resp_content_type("application/json")
     |> send_resp(200, Jason.encode!(resp))
   end
 
@@ -27,7 +30,7 @@ defmodule OlaMundoPm.Router do
   @impl true
   def handle_errors(conn, %{reason: _reason}) do
     conn
-    |> Plug.Conn.put_resp_content_type("application/json")
+    |> Conn.put_resp_content_type("application/json")
     |> send_resp(conn.status || 500, Jason.encode!(%{error: "internal_error"}))
   end
 end
