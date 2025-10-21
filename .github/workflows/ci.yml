@@ -41,8 +41,12 @@ jobs:
       - name: Credo (lint)
         run: mix credo --strict
 
-      - name: Run tests with coverage (JSON)
-        run: MIX_ENV=test mix coveralls.json
+      - name: Run tests with coverage (LCOV)
+        run: MIX_ENV=test mix coveralls.lcov
+
+      - name: Convert LCOV to Sonar Generic Coverage XML
+        run: |
+          python3 scripts/lcov_to_sonar.py cover/lcov.info cover/sonar-generic-coverage.xml
 
       - name: SonarCloud Scan (optional)
         uses: SonarSource/sonarcloud-github-action@v2
